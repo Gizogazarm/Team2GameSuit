@@ -13,7 +13,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
-        android:text="Kertas Gunting Batu"
+        android:text="@string/title"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="30sp"
@@ -25,19 +25,21 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:padding="30dp"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="start"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Pemain" />
+                android:text="@string/title_player" />
 
             <ImageView
                 android:layout_width="100dp"
@@ -59,20 +61,64 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <ImageView
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:layout_marginStart="10dp"
-            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="10dp"
 
-            />
+            >
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="end">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/title_computer" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_gravity="right"
+        android:layout_gravity="end"
         android:layout_margin="20dp"/>
 
 
