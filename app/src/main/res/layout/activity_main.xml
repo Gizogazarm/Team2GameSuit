@@ -81,7 +81,9 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginTop="20dp" />
+                    android:layout_marginTop="20dp"
+                    android:src="gunting"
+                    />
 
                 <ImageView
                     android:layout_width="100dp"
@@ -108,7 +110,6 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
-
                     />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
