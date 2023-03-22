@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">GAME SUIT</string>
-    <string name="title">Kertas Gunting Batu</string>
+    <string name="title_1">Kertas</string>
+    <string name="title_2">Gunting</string>
+    <string name="title_3">Batu</string>
     <string name="title_player">Pemain</string>
     <string name="title_computer">Computer</string>
     <string name="title_author">By Helmi</string>
