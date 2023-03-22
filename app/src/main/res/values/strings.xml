@@ -6,4 +6,5 @@
     <string name="title_player">Pemain</string>
     <string name="title_computer">Computer</string>
     <string name="title_author">By Helmi</string>
+    <string name="title_vs">VS</string>
 </resources>

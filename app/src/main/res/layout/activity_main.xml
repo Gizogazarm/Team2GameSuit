@@ -15,9 +15,8 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_margin="20dp"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
@@ -35,10 +34,9 @@
                 android:text="@string/title_2"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="30sp"
-                app:fontFamily="@font/alfa_slab_one"
                 android:textColor="#0FA127"
-                />
+                android:textSize="30sp"
+                app:fontFamily="@font/alfa_slab_one" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -46,15 +44,12 @@
                 android:text="@string/title_3"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="30sp"
-                app:fontFamily="@font/alfa_slab_one"
                 android:textColor="#D716AC"
-                />
-
+                android:textSize="30sp"
+                app:fontFamily="@font/alfa_slab_one" />
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-
 
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -76,28 +71,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/title_player" />
+                    android:text="@string/title_player"
+                    android:textStyle="bold" />
 
                 <ImageView
+                    android:id="@+id/batu_player"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
-                    app:srcCompat="@drawable/ic_batu"
-                    />
+                    app:srcCompat="@drawable/ic_batu" />
 
                 <ImageView
+                    android:id="@+id/kertas_player"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
-                    app:srcCompat="@drawable/ic_kertas"
-                    />
+                    app:srcCompat="@drawable/ic_kertas" />
 
                 <ImageView
+                    android:id="@+id/gunting"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
-                    app:srcCompat="@drawable/ic_gunting"
-                    />
+                    app:srcCompat="@drawable/ic_gunting" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -106,15 +102,19 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:gravity="center"
                 android:layout_weight="4"
-                >
+                android:gravity="center">
 
-                <ImageView
-                    android:layout_width="100dp"
+                <TextView
+                    android:id="@+id/text_center"
+                    android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
-                    />
+                    android:gravity="center"
+                    android:text="@string/title_vs"
+                    android:textColor="#E50D0D"
+                    android:textSize="64sp"
+                    app:fontFamily="@font/alfa_slab_one" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -128,28 +128,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/title_computer" />
+                    android:text="@string/title_computer"
+                    android:textStyle="bold" />
 
                 <ImageView
+                    android:id="@+id/batu_com"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
-                    app:srcCompat="@drawable/ic_batu"
-                    />
+                    app:srcCompat="@drawable/ic_batu" />
 
                 <ImageView
+                    android:id="@+id/kertas_com"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
-                    app:srcCompat="@drawable/ic_kertas"
-                    />
+                    app:srcCompat="@drawable/ic_kertas" />
 
                 <ImageView
+                    android:id="@+id/gunting_com"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
-                    app:srcCompat="@drawable/ic_gunting"
-                    />
+                    app:srcCompat="@drawable/ic_gunting" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -158,13 +159,13 @@
 
 
         <ImageView
+            android:id="@+id/btn_refresh"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="end"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="20dp"
-            android:src="@drawable/ic_refresh"
-            />
+            android:src="@drawable/ic_refresh" />
 
         <TextView
             android:layout_width="wrap_content"
