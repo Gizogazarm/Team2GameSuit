@@ -82,21 +82,21 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
-                    app:srcCompat="@drawable/batu"
+                    app:srcCompat="@drawable/ic_batu"
                     />
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
-                    app:srcCompat="@drawable/kertas"
+                    app:srcCompat="@drawable/ic_kertas"
                     />
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
-                    app:srcCompat="@drawable/gunting"
+                    app:srcCompat="@drawable/ic_gunting"
                     />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -134,21 +134,21 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
-                    app:srcCompat="@drawable/batu"
+                    app:srcCompat="@drawable/ic_batu"
                     />
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
-                    app:srcCompat="@drawable/kertas"
+                    app:srcCompat="@drawable/ic_kertas"
                     />
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
-                    app:srcCompat="@drawable/gunting"
+                    app:srcCompat="@drawable/ic_gunting"
                     />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -163,7 +163,7 @@
             android:layout_gravity="end"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="20dp"
-            android:src="@drawable/refresh"
+            android:src="@drawable/ic_refresh"
             />
 
         <TextView
