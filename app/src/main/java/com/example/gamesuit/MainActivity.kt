@@ -18,6 +18,18 @@ class MainActivity : AppCompatActivity() {
 
         with(binding) {
 
+            batuPlayer.setOnClickListener {
+                batuPlayer.setBackgroundResource(R.drawable.bg_click)
+            }
+
+            kertasPlayer.setOnClickListener {
+                kertasPlayer.setBackgroundResource(R.drawable.bg_click)
+            }
+
+            guntingPlayer.setOnClickListener {
+                guntingPlayer.setBackgroundResource(R.drawable.bg_click)
+            }
+
         }
 
     }
