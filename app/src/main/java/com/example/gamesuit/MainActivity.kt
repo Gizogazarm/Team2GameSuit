@@ -1,9 +1,11 @@
 package com.example.gamesuit
 
 import android.annotation.SuppressLint
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import com.example.gamesuit.databinding.ActivityMainBinding
 
 @SuppressLint("StaticFieldLeak")
@@ -20,6 +22,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val player = Player()
+
         with(binding) {
 
             batuPlayer.setOnClickListener {
@@ -28,7 +32,8 @@ class MainActivity : AppCompatActivity() {
                 kertasPlayer.isEnabled = false
                 guntingPlayer.isEnabled = false
                 pilihanPlayer = pilihanSuit[0]
-                Log.d("pilihan Suit", pilihanPlayer)
+                player.setPilihanPlayer(pilihanPlayer)
+                Log.d("coba hasil pilihan player", player.getPilihanPlayer())
 
             }
 
@@ -38,7 +43,9 @@ class MainActivity : AppCompatActivity() {
                 kertasPlayer.isEnabled = false
                 guntingPlayer.isEnabled = false
                 pilihanPlayer = pilihanSuit[1]
-                Log.d("pilihan Suit", pilihanPlayer)
+                player.setPilihanPlayer(pilihanPlayer)
+                Log.d("coba hasil pilihan player", player.getPilihanPlayer())
+
             }
 
             guntingPlayer.setOnClickListener {
@@ -47,8 +54,11 @@ class MainActivity : AppCompatActivity() {
                 kertasPlayer.isEnabled = false
                 guntingPlayer.isEnabled = false
                 pilihanPlayer = pilihanSuit[2]
-                Log.d("pilihan Suit", pilihanPlayer)
+                player.setPilihanPlayer(pilihanPlayer)
+                Log.d("coba hasil pilihan player", player.getPilihanPlayer())
+
             }
+
 
         }
 
