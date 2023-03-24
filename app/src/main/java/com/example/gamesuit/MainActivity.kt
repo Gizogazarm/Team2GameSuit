@@ -1,12 +1,12 @@
 package com.example.gamesuit
 
 import android.annotation.SuppressLint
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import com.example.gamesuit.databinding.ActivityMainBinding
+
 
 @SuppressLint("StaticFieldLeak")
 private lateinit var binding: ActivityMainBinding
@@ -23,14 +23,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val player = Player()
+        val computer = Computer()
 
         with(binding) {
 
             batuPlayer.setOnClickListener {
                 batuPlayer.setBackgroundResource(R.drawable.bg_click)
-                batuPlayer.isEnabled = false
-                kertasPlayer.isEnabled = false
-                guntingPlayer.isEnabled = false
+                setEnabledImageView(batuPlayer,kertasPlayer,guntingPlayer,setNilai = false)
                 pilihanPlayer = pilihanSuit[0]
                 player.setPilihanPlayer(pilihanPlayer)
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
@@ -39,9 +38,7 @@ class MainActivity : AppCompatActivity() {
 
             kertasPlayer.setOnClickListener {
                 kertasPlayer.setBackgroundResource(R.drawable.bg_click)
-                batuPlayer.isEnabled = false
-                kertasPlayer.isEnabled = false
-                guntingPlayer.isEnabled = false
+                setEnabledImageView(batuPlayer,kertasPlayer,guntingPlayer,setNilai = false)
                 pilihanPlayer = pilihanSuit[1]
                 player.setPilihanPlayer(pilihanPlayer)
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
@@ -50,9 +47,7 @@ class MainActivity : AppCompatActivity() {
 
             guntingPlayer.setOnClickListener {
                 guntingPlayer.setBackgroundResource(R.drawable.bg_click)
-                batuPlayer.isEnabled = false
-                kertasPlayer.isEnabled = false
-                guntingPlayer.isEnabled = false
+                setEnabledImageView(batuPlayer,kertasPlayer,guntingPlayer,setNilai = false)
                 pilihanPlayer = pilihanSuit[2]
                 player.setPilihanPlayer(pilihanPlayer)
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
@@ -62,5 +57,11 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    private fun setEnabledImageView(imageView1: ImageView,imageView2: ImageView,imageView3: ImageView,setNilai: Boolean) {
+        imageView1.isEnabled = setNilai
+        imageView2.isEnabled = setNilai
+        imageView3.isEnabled = setNilai
     }
 }
