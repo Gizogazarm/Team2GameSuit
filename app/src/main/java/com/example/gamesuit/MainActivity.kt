@@ -15,6 +15,7 @@ private lateinit var binding: ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var pilihanPlayer: String
+    private lateinit var hasilSuit: String
     private val pilihanSuit = arrayOf("batu","kertas","gunting")
 
 
@@ -44,8 +45,11 @@ class MainActivity : AppCompatActivity() {
                 computer.suit(computer.getPilihanPlayer(),player.getPilihanPlayer())
                 Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
                 Log.d("coba hasil status menang computer ", "${computer.getStatusMenang()}")
+                hasilSuit = hasilSuit(player.getStatusMenang(),computer.getStatusMenang())
+                Log.d("coba hasil status Hasil Suit ", hasilSuit)
 
 
+//
             }
 
             kertasPlayer.setOnClickListener {
@@ -62,6 +66,8 @@ class MainActivity : AppCompatActivity() {
                 computer.suit(computer.getPilihanPlayer(),player.getPilihanPlayer())
                 Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
                 Log.d("coba hasil status menang computer", "${computer.getStatusMenang()}")
+                hasilSuit = hasilSuit(player.getStatusMenang(),computer.getStatusMenang())
+                Log.d("coba hasil status Hasil Suit ", hasilSuit)
 
 
             }
@@ -80,12 +86,27 @@ class MainActivity : AppCompatActivity() {
                 computer.suit(computer.getPilihanPlayer(),player.getPilihanPlayer())
                 Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
                 Log.d("coba hasil status menang computer", "${computer.getStatusMenang()}")
+                hasilSuit = hasilSuit(player.getStatusMenang(),computer.getStatusMenang())
+                Log.d("coba hasil status Hasil Suit ", hasilSuit)
 
             }
 
 
         }
 
+    }
+
+    private fun hasilSuit(status1: Boolean,status2: Boolean): String {
+      lateinit var nilaiString: String
+
+        if(status1 && !status2) {
+            nilaiString = "Pemain Menang"
+        } else if (!status1 && status2) {
+            nilaiString = "Computer Menang"
+        } else {
+            nilaiString = "Draw"
+        }
+        return nilaiString
     }
 
     private fun setEnabledImageView(imageView1: ImageView,imageView2: ImageView,imageView3: ImageView,setNilai: Boolean) {
