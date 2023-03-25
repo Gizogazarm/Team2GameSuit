@@ -39,6 +39,10 @@ class MainActivity : AppCompatActivity() {
                 computer.pilihanCom(pilihanSuit)
                 computer.setPilihanPlayer(computer.getPilihanCom())
                 Log.d("coba hasil komputer", computer.getPilihanPlayer())
+                player.suit(player.getPilihanPlayer(),computer.getPilihanPlayer())
+                computer.suit(computer.getPilihanPlayer(),player.getPilihanPlayer())
+                Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
+                Log.d("coba hasil status menang computer ", "${computer.getStatusMenang()}")
 
 
             }
@@ -52,6 +56,10 @@ class MainActivity : AppCompatActivity() {
                 computer.pilihanCom(pilihanSuit)
                 computer.setPilihanPlayer(computer.getPilihanCom())
                 Log.d("coba hasil komputer", computer.getPilihanPlayer())
+                player.suit(player.getPilihanPlayer(),computer.getPilihanPlayer())
+                computer.suit(computer.getPilihanPlayer(),player.getPilihanPlayer())
+                Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
+                Log.d("coba hasil status menang computer", "${computer.getStatusMenang()}")
 
 
             }
@@ -65,6 +73,10 @@ class MainActivity : AppCompatActivity() {
                 computer.pilihanCom(pilihanSuit)
                 computer.setPilihanPlayer(computer.getPilihanCom())
                 Log.d("coba hasil komputer", computer.getPilihanPlayer())
+                player.suit(player.getPilihanPlayer(),computer.getPilihanPlayer())
+                computer.suit(computer.getPilihanPlayer(),player.getPilihanPlayer())
+                Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
+                Log.d("coba hasil status menang computer", "${computer.getStatusMenang()}")
 
             }
 
