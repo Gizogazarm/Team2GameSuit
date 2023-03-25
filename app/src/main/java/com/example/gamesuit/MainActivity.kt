@@ -1,9 +1,12 @@
 package com.example.gamesuit
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.TypedValue
+import android.view.Gravity
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.gamesuit.databinding.ActivityMainBinding
@@ -49,6 +52,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("coba hasil status menang computer ", "${computer.getStatusMenang()}")
                 hasilSuit = hasilSuit(player.getStatusMenang(),computer.getStatusMenang(),suitHasil)
                 Log.d("coba hasil status Hasil Suit ", hasilSuit)
+                efekHasilSuit(textCenter,hasilSuit,suitHasil)
 
 
 
@@ -100,8 +104,40 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun efekHasilSuit(textView: TextView) {
 
+    private fun efekHasilSuit(textView: TextView, hasilSuit:String, arrayhasilSuit: Array<String>) {
+
+
+            when(hasilSuit) {
+                arrayhasilSuit[0] ->
+                    textView.apply {
+                        setBackgroundResource(R.drawable.bg_text_center)
+                        text = hasilSuit
+                        setTextColor(Color.WHITE)
+                        setTextSize(TypedValue.COMPLEX_UNIT_SP,32f)
+                        Gravity.CENTER
+                    }
+
+
+                arrayhasilSuit[1] ->
+                    textView.apply {
+                        setBackgroundResource(R.drawable.bg_text_center)
+                        text = hasilSuit
+                        setTextColor(Color.WHITE)
+                        setTextSize(TypedValue.COMPLEX_UNIT_SP,32f)
+                        Gravity.CENTER
+                    }
+
+
+                arrayhasilSuit[2] ->
+                    textView.apply {
+                        setBackgroundResource(R.drawable.bg_text_center_draw)
+                        text = hasilSuit
+                        setTextColor(Color.WHITE)
+                        setTextSize(TypedValue.COMPLEX_UNIT_SP,32f)
+                        Gravity.CENTER
+                    }
+            }
     }
 
     private fun hasilSuit(status1: Boolean,status2: Boolean,arrayhasilSuit: Array<String>): String {

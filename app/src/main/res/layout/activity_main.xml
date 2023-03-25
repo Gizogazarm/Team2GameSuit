@@ -108,13 +108,14 @@
                 <TextView
                     android:id="@+id/textCenter"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="@string/title_vs"
                     android:textColor="#E50D0D"
                     android:textSize="64sp"
-                    app:fontFamily="@font/alfa_slab_one" />
+                    app:fontFamily="@font/alfa_slab_one"
+                    />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
