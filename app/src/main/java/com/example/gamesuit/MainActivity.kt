@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
+import android.widget.TextView
 import com.example.gamesuit.databinding.ActivityMainBinding
 
 
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var pilihanPlayer: String
     private lateinit var hasilSuit: String
     private val pilihanSuit = arrayOf("batu","kertas","gunting")
+    private val suitHasil = arrayOf("Pemain Menang", "Computer Menang", "Draw")
 
 
 
@@ -45,8 +47,9 @@ class MainActivity : AppCompatActivity() {
                 computer.suit(computer.getPilihanPlayer(),player.getPilihanPlayer())
                 Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
                 Log.d("coba hasil status menang computer ", "${computer.getStatusMenang()}")
-                hasilSuit = hasilSuit(player.getStatusMenang(),computer.getStatusMenang())
+                hasilSuit = hasilSuit(player.getStatusMenang(),computer.getStatusMenang(),suitHasil)
                 Log.d("coba hasil status Hasil Suit ", hasilSuit)
+
 
 
 //
@@ -66,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                 computer.suit(computer.getPilihanPlayer(),player.getPilihanPlayer())
                 Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
                 Log.d("coba hasil status menang computer", "${computer.getStatusMenang()}")
-                hasilSuit = hasilSuit(player.getStatusMenang(),computer.getStatusMenang())
+                hasilSuit = hasilSuit(player.getStatusMenang(),computer.getStatusMenang(),suitHasil)
                 Log.d("coba hasil status Hasil Suit ", hasilSuit)
 
 
@@ -86,8 +89,9 @@ class MainActivity : AppCompatActivity() {
                 computer.suit(computer.getPilihanPlayer(),player.getPilihanPlayer())
                 Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
                 Log.d("coba hasil status menang computer", "${computer.getStatusMenang()}")
-                hasilSuit = hasilSuit(player.getStatusMenang(),computer.getStatusMenang())
+                hasilSuit = hasilSuit(player.getStatusMenang(),computer.getStatusMenang(),suitHasil)
                 Log.d("coba hasil status Hasil Suit ", hasilSuit)
+
 
             }
 
@@ -96,15 +100,19 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun hasilSuit(status1: Boolean,status2: Boolean): String {
+    private fun efekHasilSuit(textView: TextView) {
+
+    }
+
+    private fun hasilSuit(status1: Boolean,status2: Boolean,arrayhasilSuit: Array<String>): String {
       lateinit var nilaiString: String
 
         if(status1 && !status2) {
-            nilaiString = "Pemain Menang"
+            nilaiString = arrayhasilSuit[0]
         } else if (!status1 && status2) {
-            nilaiString = "Computer Menang"
+            nilaiString = arrayhasilSuit[1]
         } else {
-            nilaiString = "Draw"
+            nilaiString = arrayhasilSuit[2]
         }
         return nilaiString
     }
