@@ -132,21 +132,21 @@
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:id="@+id/batu_com"
+                    android:id="@+id/batuCom"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
                     app:srcCompat="@drawable/ic_batu" />
 
                 <ImageView
-                    android:id="@+id/kertas_com"
+                    android:id="@+id/kertasCom"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
                     app:srcCompat="@drawable/ic_kertas" />
 
                 <ImageView
-                    android:id="@+id/gunting_com"
+                    android:id="@+id/guntingCom"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="20dp"
