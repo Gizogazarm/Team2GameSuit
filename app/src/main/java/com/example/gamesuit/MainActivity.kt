@@ -56,7 +56,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-//
             }
 
             kertasPlayer.setOnClickListener {
@@ -75,6 +74,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("coba hasil status menang computer", "${computer.getStatusMenang()}")
                 hasilSuit = hasilSuit(player.getStatusMenang(),computer.getStatusMenang(),suitHasil)
                 Log.d("coba hasil status Hasil Suit ", hasilSuit)
+                efekHasilSuit(textCenter,hasilSuit,suitHasil)
 
 
             }
@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("coba hasil status menang computer", "${computer.getStatusMenang()}")
                 hasilSuit = hasilSuit(player.getStatusMenang(),computer.getStatusMenang(),suitHasil)
                 Log.d("coba hasil status Hasil Suit ", hasilSuit)
+                efekHasilSuit(textCenter,hasilSuit,suitHasil)
 
 
             }
