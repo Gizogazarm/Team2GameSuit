@@ -37,7 +37,9 @@ class MainActivity : AppCompatActivity() {
                 player.setPilihanPlayer(pilihanPlayer)
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
                 computer.pilihanCom(pilihanSuit)
-                Log.d("coba hasil komputer", computer.getPilihanCom())
+                computer.setPilihanPlayer(computer.getPilihanCom())
+                Log.d("coba hasil komputer", computer.getPilihanPlayer())
+
 
             }
 
@@ -48,7 +50,8 @@ class MainActivity : AppCompatActivity() {
                 player.setPilihanPlayer(pilihanPlayer)
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
                 computer.pilihanCom(pilihanSuit)
-                Log.d("coba hasil komputer", computer.getPilihanCom())
+                computer.setPilihanPlayer(computer.getPilihanCom())
+                Log.d("coba hasil komputer", computer.getPilihanPlayer())
 
 
             }
@@ -60,8 +63,8 @@ class MainActivity : AppCompatActivity() {
                 player.setPilihanPlayer(pilihanPlayer)
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
                 computer.pilihanCom(pilihanSuit)
-                Log.d("coba hasil komputer", computer.getPilihanCom())
-
+                computer.setPilihanPlayer(computer.getPilihanCom())
+                Log.d("coba hasil komputer", computer.getPilihanPlayer())
 
             }
 
