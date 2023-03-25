@@ -8,6 +8,7 @@ import android.widget.ImageView
 import com.example.gamesuit.databinding.ActivityMainBinding
 
 
+
 @SuppressLint("StaticFieldLeak")
 private lateinit var binding: ActivityMainBinding
 
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var pilihanPlayer: String
     private val pilihanSuit = arrayOf("batu","kertas","gunting")
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val player = Player()
         val computer = Computer()
 
+
         with(binding) {
 
             batuPlayer.setOnClickListener {
@@ -33,6 +36,8 @@ class MainActivity : AppCompatActivity() {
                 pilihanPlayer = pilihanSuit[0]
                 player.setPilihanPlayer(pilihanPlayer)
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
+                computer.pilihanCom(pilihanSuit)
+                Log.d("coba hasil komputer", computer.getPilihanCom())
 
             }
 
@@ -42,6 +47,9 @@ class MainActivity : AppCompatActivity() {
                 pilihanPlayer = pilihanSuit[1]
                 player.setPilihanPlayer(pilihanPlayer)
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
+                computer.pilihanCom(pilihanSuit)
+                Log.d("coba hasil komputer", computer.getPilihanCom())
+
 
             }
 
@@ -51,6 +59,9 @@ class MainActivity : AppCompatActivity() {
                 pilihanPlayer = pilihanSuit[2]
                 player.setPilihanPlayer(pilihanPlayer)
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
+                computer.pilihanCom(pilihanSuit)
+                Log.d("coba hasil komputer", computer.getPilihanCom())
+
 
             }
 
