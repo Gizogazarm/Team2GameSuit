@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
         val player = Player()
         val computer = Computer()
 
-
         with(binding) {
 
             originalText = textCenter.text.toString()
