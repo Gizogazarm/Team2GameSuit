@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
             batuPlayer.setOnClickListener {
                 batuPlayer.setBackgroundResource(R.drawable.bg_click)
-                setEnabledImageView(batuPlayer,kertasPlayer,guntingPlayer,setNilai = false)
+                setEnabledImageView(batuPlayer,kertasPlayer,guntingPlayer,false)
                 pilihanPlayer = pilihanSuit[0]
                 player.setPilihanPlayer(pilihanPlayer)
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
@@ -97,7 +97,10 @@ class MainActivity : AppCompatActivity() {
                 Log.d("coba hasil status Hasil Suit ", hasilSuit)
                 efekHasilSuit(textCenter,hasilSuit,suitHasil)
 
+            }
 
+            btnRefresh.setOnClickListener {
+                setEnabledImageView(batuPlayer,kertasPlayer,guntingPlayer,true)
             }
 
 
@@ -155,8 +158,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setEnabledImageView(imageView1: ImageView,imageView2: ImageView,imageView3: ImageView,setNilai: Boolean) {
-        imageView1.isEnabled = setNilai
-        imageView2.isEnabled = setNilai
-        imageView3.isEnabled = setNilai
+
+        if(setNilai) {
+            imageView1.isEnabled = setNilai
+            imageView1.setBackgroundResource(R.drawable.bg_awal_click)
+            imageView2.isEnabled = setNilai
+            imageView2.setBackgroundResource(R.drawable.bg_awal_click)
+            imageView3.isEnabled = setNilai
+            imageView3.setBackgroundResource(R.drawable.bg_awal_click)
+
+        } else {
+            imageView1.isEnabled = setNilai
+            imageView2.isEnabled = setNilai
+            imageView3.isEnabled = setNilai
+        }
+
     }
 }
