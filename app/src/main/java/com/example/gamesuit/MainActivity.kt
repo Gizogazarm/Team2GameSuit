@@ -9,6 +9,7 @@ import android.util.TypedValue
 import android.view.Gravity
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.example.gamesuit.databinding.ActivityMainBinding
 
 
@@ -20,7 +21,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var pilihanPlayer: String
     private lateinit var hasilSuit: String
     private lateinit var originalText: String
-    private var originalSize: Float = 0f
     private var originalColor: Int = 0
     private val pilihanSuit = arrayOf("batu", "kertas", "gunting")
     private val suitHasil = arrayOf("Pemain Menang", "Computer Menang", "Draw")
@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
         with(binding) {
 
             originalText = textCenter.text.toString()
-            originalSize = textCenter.textSize
             originalColor = textCenter.currentTextColor
 
             batuPlayer.setOnClickListener {
@@ -55,8 +54,7 @@ class MainActivity : AppCompatActivity() {
                 computer.suit(computer.getPilihanPlayer(), player.getPilihanPlayer())
                 Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
                 Log.d("coba hasil status menang computer ", "${computer.getStatusMenang()}")
-                hasilSuit =
-                    hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
+                hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
                 Log.d("coba hasil status Hasil Suit ", hasilSuit)
                 efekHasilSuit(textCenter, hasilSuit, suitHasil)
 
@@ -77,8 +75,7 @@ class MainActivity : AppCompatActivity() {
                 computer.suit(computer.getPilihanPlayer(), player.getPilihanPlayer())
                 Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
                 Log.d("coba hasil status menang computer", "${computer.getStatusMenang()}")
-                hasilSuit =
-                    hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
+                hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
                 Log.d("coba hasil status Hasil Suit ", hasilSuit)
                 efekHasilSuit(textCenter, hasilSuit, suitHasil)
 
@@ -112,7 +109,7 @@ class MainActivity : AppCompatActivity() {
                 textCenter.setTextColor(originalColor)
                 textCenter.setTextSize(TypedValue.COMPLEX_UNIT_SP,64f)
                 textCenter.setBackgroundResource(R.drawable.bg_awal_click)
-                Log.d("coba hasil original size", "$originalSize")
+                Toast.makeText(this@MainActivity,"Main lagi Kuy",Toast.LENGTH_SHORT).show()
 
             }
 
