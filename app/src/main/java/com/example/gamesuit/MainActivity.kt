@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity() {
                         setBackgroundResource(R.drawable.bg_text_center)
                         text = hasilSuit
                         setTextColor(Color.WHITE)
-                        setTextSize(TypedValue.COMPLEX_UNIT_SP,32f)
+                        setTextSize(TypedValue.COMPLEX_UNIT_SP,18f)
                         Gravity.CENTER
                     }
 
@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
                         setBackgroundResource(R.drawable.bg_text_center)
                         text = hasilSuit
                         setTextColor(Color.WHITE)
-                        setTextSize(TypedValue.COMPLEX_UNIT_SP,32f)
+                        setTextSize(TypedValue.COMPLEX_UNIT_SP,18f)
                         Gravity.CENTER
                     }
 
@@ -135,7 +135,7 @@ class MainActivity : AppCompatActivity() {
                         setBackgroundResource(R.drawable.bg_text_center_draw)
                         text = hasilSuit
                         setTextColor(Color.WHITE)
-                        setTextSize(TypedValue.COMPLEX_UNIT_SP,32f)
+                        setTextSize(TypedValue.COMPLEX_UNIT_SP,24f)
                         Gravity.CENTER
                     }
             }
