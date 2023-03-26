@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
             kertasPlayer.setOnClickListener {
                 kertasPlayer.setBackgroundResource(R.drawable.bg_click)
-                setEnabledImageView(batuPlayer,kertasPlayer,guntingPlayer,setNilai = false)
+                setEnabledImageView(batuPlayer,kertasPlayer,guntingPlayer,false)
                 pilihanPlayer = pilihanSuit[1]
                 player.setPilihanPlayer(pilihanPlayer)
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
 
             guntingPlayer.setOnClickListener {
                 guntingPlayer.setBackgroundResource(R.drawable.bg_click)
-                setEnabledImageView(batuPlayer,kertasPlayer,guntingPlayer,setNilai = false)
+                setEnabledImageView(batuPlayer,kertasPlayer,guntingPlayer,false)
                 pilihanPlayer = pilihanSuit[2]
                 player.setPilihanPlayer(pilihanPlayer)
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
@@ -101,11 +101,18 @@ class MainActivity : AppCompatActivity() {
 
             btnRefresh.setOnClickListener {
                 setEnabledImageView(batuPlayer,kertasPlayer,guntingPlayer,true)
+                setClearImageView(batuCom,guntingCom,kertasCom)
             }
 
 
         }
 
+    }
+
+    private fun setClearImageView(imageView1: ImageView,imageView2: ImageView,imageView3: ImageView) {
+        imageView1.setBackgroundResource(R.drawable.bg_awal_click)
+        imageView2.setBackgroundResource(R.drawable.bg_awal_click)
+        imageView3.setBackgroundResource(R.drawable.bg_awal_click)
     }
 
 
@@ -158,6 +165,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setEnabledImageView(imageView1: ImageView,imageView2: ImageView,imageView3: ImageView,setNilai: Boolean) {
+
 
         if(setNilai) {
             imageView1.isEnabled = setNilai
