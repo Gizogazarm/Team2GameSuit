@@ -1,6 +1,6 @@
 package com.example.gamesuit
 
-import android.annotation.SuppressLint
+
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,11 +13,12 @@ import android.widget.Toast
 import com.example.gamesuit.databinding.ActivityMainBinding
 
 
-@SuppressLint("StaticFieldLeak")
-private lateinit var binding: ActivityMainBinding
+
+
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
     private lateinit var pilihanPlayer: String
     private lateinit var hasilSuit: String
     private lateinit var originalText: String
@@ -159,20 +160,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun hasilSuit(status1: Boolean, status2: Boolean, arrayhasilSuit: Array<String>): String {
-        lateinit var nilaiString: String
 
-        if (status1 && !status2) {
-            nilaiString = arrayhasilSuit[0]
+        val nilaiString: String = if (status1 && !status2) {
+            arrayhasilSuit[0]
         } else if (!status1 && status2) {
-            nilaiString = arrayhasilSuit[1]
+            arrayhasilSuit[1]
         } else {
-            nilaiString = arrayhasilSuit[2]
+            arrayhasilSuit[2]
         }
         return nilaiString
     }
 
     private fun setEnabledImageView(imageView1: ImageView, imageView2: ImageView, imageView3: ImageView, setNilai: Boolean) {
-
+        imageView1.isEnabled = setNilai
+        imageView2.isEnabled = setNilai
+        imageView3.isEnabled = setNilai
 
         if (setNilai) {
             imageView1.isEnabled = setNilai
@@ -182,10 +184,6 @@ class MainActivity : AppCompatActivity() {
             imageView3.isEnabled = setNilai
             imageView3.setBackgroundResource(R.drawable.bg_awal_click)
 
-        } else {
-            imageView1.isEnabled = setNilai
-            imageView2.isEnabled = setNilai
-            imageView3.isEnabled = setNilai
         }
 
     }

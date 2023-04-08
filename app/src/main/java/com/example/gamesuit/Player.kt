@@ -13,17 +13,13 @@ open class Player : Suit() {
     }
 
     override fun suit(pilihan1: String, pilihan2: String): Boolean {
-        when (pilihan1 == pilihan2) {
-            true -> statusMenang = false
+        statusMenang = when (pilihan1 == pilihan2) {
+            true -> false
             false -> if (pilihan1 == "batu" && pilihan2 == "gunting") {
-                statusMenang = true
+                true
             } else if (pilihan1 == "gunting" && pilihan2 == "kertas") {
-                statusMenang = true
-            } else if (pilihan1 == "kertas" && pilihan2 == "batu") {
-                statusMenang = true
-            } else {
-                statusMenang = false
-            }
+                true
+            } else pilihan1 == "kertas" && pilihan2 == "batu"
         }
         return statusMenang
     }
