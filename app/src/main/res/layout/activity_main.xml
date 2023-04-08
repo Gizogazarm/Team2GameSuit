@@ -114,7 +114,8 @@
                     android:text="@string/title_vs"
                     android:textColor="#E50D0D"
                     android:textSize="64sp"
-                    app:fontFamily="@font/alfa_slab_one"
+                    android:fontFamily="@font/alfa_slab_one"
+                    android:rotation="-20"
                     />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -173,9 +174,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="200dp"
-            android:fontFamily="@font/oregano"
+            android:fontFamily="@font/alfa_slab_one"
             android:text="@string/title_author"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:rotationX="-20"
+            />
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
