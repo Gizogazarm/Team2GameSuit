@@ -8,13 +8,14 @@
 
     <ImageView
         android:id="@+id/imageGlide"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235" />
+        app:layout_constraintVertical_bias="0.136" />
 
     <ImageView
         android:id="@+id/imageSplashScreen"
@@ -22,8 +23,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageGlide"
+        app:layout_constraintTop_toBottomOf="@id/imageGlide"
+        app:layout_constraintVertical_bias="0.232"
         app:srcCompat="@drawable/ic_splash_screen2" />
 
 

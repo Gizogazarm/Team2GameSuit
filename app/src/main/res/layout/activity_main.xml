@@ -110,13 +110,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:fontFamily="@font/alfa_slab_one"
                     android:gravity="center"
+                    android:rotation="-20"
                     android:text="@string/title_vs"
                     android:textColor="#E50D0D"
-                    android:textSize="64sp"
-                    android:fontFamily="@font/alfa_slab_one"
-                    android:rotation="-20"
-                    />
+                    android:textSize="64sp" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
