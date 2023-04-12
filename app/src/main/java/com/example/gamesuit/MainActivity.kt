@@ -26,14 +26,15 @@ class MainActivity : AppCompatActivity() {
     private val pilihanSuit = arrayOf("batu", "kertas", "gunting")
     private val suitHasil = arrayOf("Pemain Menang", "Computer Menang", "Draw")
 
+    val player = Player()
+    val computer = Computer()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val player = Player()
-        val computer = Computer()
 
         with(binding) {
 
@@ -46,9 +47,7 @@ class MainActivity : AppCompatActivity() {
                 pilihanPlayer = pilihanSuit[0]
                 player.setPilihanPlayer(pilihanPlayer)
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
-                computer.pilihanCom(pilihanSuit)
-                computer.setPilihanPlayer(computer.getPilihanCom())
-                computer.efekPilihanCom(batuCom, guntingCom, kertasCom)
+                pilihanComputer(batuCom, guntingCom, kertasCom)
                 Log.d("coba hasil komputer", computer.getPilihanPlayer())
                 player.suit(player.getPilihanPlayer(), computer.getPilihanPlayer())
                 computer.suit(computer.getPilihanPlayer(), player.getPilihanPlayer())
@@ -57,8 +56,6 @@ class MainActivity : AppCompatActivity() {
                 hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
                 Log.d("coba hasil status Hasil Suit ", hasilSuit)
                 efekHasilSuit(textCenter, hasilSuit, suitHasil)
-
-
             }
 
             kertasPlayer.setOnClickListener {
@@ -67,9 +64,7 @@ class MainActivity : AppCompatActivity() {
                 pilihanPlayer = pilihanSuit[1]
                 player.setPilihanPlayer(pilihanPlayer)
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
-                computer.pilihanCom(pilihanSuit)
-                computer.setPilihanPlayer(computer.getPilihanCom())
-                computer.efekPilihanCom(batuCom, guntingCom, kertasCom)
+                pilihanComputer(batuCom, guntingCom, kertasCom)
                 Log.d("coba hasil komputer", computer.getPilihanPlayer())
                 player.suit(player.getPilihanPlayer(), computer.getPilihanPlayer())
                 computer.suit(computer.getPilihanPlayer(), player.getPilihanPlayer())
@@ -78,8 +73,6 @@ class MainActivity : AppCompatActivity() {
                 hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
                 Log.d("coba hasil status Hasil Suit ", hasilSuit)
                 efekHasilSuit(textCenter, hasilSuit, suitHasil)
-
-
             }
 
             guntingPlayer.setOnClickListener {
@@ -88,9 +81,7 @@ class MainActivity : AppCompatActivity() {
                 pilihanPlayer = pilihanSuit[2]
                 player.setPilihanPlayer(pilihanPlayer)
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
-                computer.pilihanCom(pilihanSuit)
-                computer.setPilihanPlayer(computer.getPilihanCom())
-                computer.efekPilihanCom(batuCom, guntingCom, kertasCom)
+                pilihanComputer(batuCom, guntingCom, kertasCom)
                 Log.d("coba hasil komputer", computer.getPilihanPlayer())
                 player.suit(player.getPilihanPlayer(), computer.getPilihanPlayer())
                 computer.suit(computer.getPilihanPlayer(), player.getPilihanPlayer())
@@ -99,7 +90,6 @@ class MainActivity : AppCompatActivity() {
                 hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
                 Log.d("coba hasil status Hasil Suit ", hasilSuit)
                 efekHasilSuit(textCenter, hasilSuit, suitHasil)
-
             }
 
             btnRefresh.setOnClickListener {
@@ -116,6 +106,12 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    private fun pilihanComputer(imageView1: ImageView,imageView2: ImageView,imageView3: ImageView) {
+        computer.pilihanCom(pilihanSuit)
+        computer.setPilihanPlayer(computer.getPilihanCom())
+        computer.efekPilihanCom(imageView1, imageView2, imageView3)
     }
 
     private fun setClearImageView(imageView1: ImageView, imageView2: ImageView, imageView3: ImageView) {
