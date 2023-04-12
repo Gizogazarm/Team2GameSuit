@@ -26,14 +26,16 @@ class MainActivity : AppCompatActivity() {
     private val pilihanSuit = arrayOf("batu", "kertas", "gunting")
     private val suitHasil = arrayOf("Pemain Menang", "Computer Menang", "Draw")
 
+    val player = Player()
+    val computer = Computer()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val player = Player()
-        val computer = Computer()
+
 
         with(binding) {
 
