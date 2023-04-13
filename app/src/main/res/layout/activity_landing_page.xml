@@ -55,7 +55,7 @@
             android:id="@+id/btn_landingpage"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             app:srcCompat="@drawable/gg_play_button"
             android:layout_marginEnd="30dp"
             />
