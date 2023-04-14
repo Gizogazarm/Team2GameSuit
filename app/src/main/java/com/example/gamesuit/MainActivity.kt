@@ -49,8 +49,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
                 pilihanComputer(batuCom, guntingCom, kertasCom)
                 Log.d("coba hasil komputer", computer.getPilihanPlayer())
-                player.suit(player.getPilihanPlayer(), computer.getPilihanPlayer())
-                computer.suit(computer.getPilihanPlayer(), player.getPilihanPlayer())
+                duelSuit()
                 Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
                 Log.d("coba hasil status menang computer ", "${computer.getStatusMenang()}")
                 hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
@@ -66,8 +65,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
                 pilihanComputer(batuCom, guntingCom, kertasCom)
                 Log.d("coba hasil komputer", computer.getPilihanPlayer())
-                player.suit(player.getPilihanPlayer(), computer.getPilihanPlayer())
-                computer.suit(computer.getPilihanPlayer(), player.getPilihanPlayer())
+                duelSuit()
                 Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
                 Log.d("coba hasil status menang computer", "${computer.getStatusMenang()}")
                 hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
@@ -83,8 +81,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("coba hasil pilihan player", player.getPilihanPlayer())
                 pilihanComputer(batuCom, guntingCom, kertasCom)
                 Log.d("coba hasil komputer", computer.getPilihanPlayer())
-                player.suit(player.getPilihanPlayer(), computer.getPilihanPlayer())
-                computer.suit(computer.getPilihanPlayer(), player.getPilihanPlayer())
+                duelSuit()
                 Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
                 Log.d("coba hasil status menang computer", "${computer.getStatusMenang()}")
                 hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
@@ -106,6 +103,11 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    private fun duelSuit() {
+        player.suit(player.getPilihanPlayer(), computer.getPilihanPlayer())
+        computer.suit(computer.getPilihanPlayer(), player.getPilihanPlayer())
     }
 
     private fun pilihanComputer(imageView1: ImageView,imageView2: ImageView,imageView3: ImageView) {
