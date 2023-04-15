@@ -4,7 +4,6 @@ package com.example.gamesuit
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
 import android.widget.ImageView
@@ -46,14 +45,9 @@ class MainActivity : AppCompatActivity() {
                 setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
                 pilihanPlayer = pilihanSuit[0]
                 player.setPilihanPlayer(pilihanPlayer)
-                Log.d("coba hasil pilihan player", player.getPilihanPlayer())
                 pilihanComputer(batuCom, guntingCom, kertasCom)
-                Log.d("coba hasil komputer", computer.getPilihanPlayer())
                 duelSuit()
-                Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
-                Log.d("coba hasil status menang computer ", "${computer.getStatusMenang()}")
                 hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
-                Log.d("coba hasil status Hasil Suit ", hasilSuit)
                 efekHasilSuit(textCenter, hasilSuit, suitHasil)
             }
 
@@ -62,14 +56,9 @@ class MainActivity : AppCompatActivity() {
                 setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
                 pilihanPlayer = pilihanSuit[1]
                 player.setPilihanPlayer(pilihanPlayer)
-                Log.d("coba hasil pilihan player", player.getPilihanPlayer())
                 pilihanComputer(batuCom, guntingCom, kertasCom)
-                Log.d("coba hasil komputer", computer.getPilihanPlayer())
                 duelSuit()
-                Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
-                Log.d("coba hasil status menang computer", "${computer.getStatusMenang()}")
                 hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
-                Log.d("coba hasil status Hasil Suit ", hasilSuit)
                 efekHasilSuit(textCenter, hasilSuit, suitHasil)
             }
 
@@ -78,14 +67,9 @@ class MainActivity : AppCompatActivity() {
                 setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
                 pilihanPlayer = pilihanSuit[2]
                 player.setPilihanPlayer(pilihanPlayer)
-                Log.d("coba hasil pilihan player", player.getPilihanPlayer())
                 pilihanComputer(batuCom, guntingCom, kertasCom)
-                Log.d("coba hasil komputer", computer.getPilihanPlayer())
                 duelSuit()
-                Log.d("coba hasil status menang player", "${player.getStatusMenang()}")
-                Log.d("coba hasil status menang computer", "${computer.getStatusMenang()}")
                 hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
-                Log.d("coba hasil status Hasil Suit ", hasilSuit)
                 efekHasilSuit(textCenter, hasilSuit, suitHasil)
             }
 
@@ -97,7 +81,6 @@ class MainActivity : AppCompatActivity() {
                 textCenter.setTextSize(TypedValue.COMPLEX_UNIT_SP,64f)
                 textCenter.setBackgroundResource(R.drawable.bg_awal_click)
                 Toast.makeText(this@MainActivity,"Main lagi Kuy",Toast.LENGTH_SHORT).show()
-
             }
 
 
