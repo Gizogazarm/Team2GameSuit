@@ -1,5 +1,6 @@
 package com.example.gamesuit
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.gamesuit.databinding.ActivityLandingPageBinding
@@ -25,10 +26,16 @@ class LandingPageActivity : AppCompatActivity() {
 
             btnLandingpage.setOnClickListener {
                 val currentItem = viewPager.currentItem
-                if(currentItem < fragments.size-1) {
+                if(currentItem == fragments.size-1) {
+                    val intent = Intent(this@LandingPageActivity, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
                     viewPager.currentItem = viewPager.currentItem + 1
                 }
             }
+
+
         }
 
     }
