@@ -7,6 +7,11 @@ import com.example.gamesuit.databinding.ActivityLandingPageBinding
 class LandingPageActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLandingPageBinding
+    private val fragments = arrayListOf(
+        FirstFragmentLandingPage(),
+        SecondFragmentLandingPage(),
+        ThirdFragmentLandingPage()
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,9 +19,16 @@ class LandingPageActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         with(binding) {
-            val fragments = arrayListOf(FirstFragmentLandingPage(),SecondFragmentLandingPage(),ThirdFragmentLandingPage())
-            val adapter = ViewPagerAdapter(fragments,supportFragmentManager,lifecycle)
-            viewPager.adapter= adapter
+
+            val adapter = ViewPagerAdapter(fragments, supportFragmentManager, lifecycle)
+            viewPager.adapter = adapter
+
+            btnLandingpage.setOnClickListener {
+                val currentItem = viewPager.currentItem
+                if(currentItem < fragments.size-1) {
+                    viewPager.currentItem = viewPager.currentItem + 1
+                }
+            }
         }
 
     }

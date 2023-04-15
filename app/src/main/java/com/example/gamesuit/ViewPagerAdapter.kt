@@ -13,4 +13,5 @@ class ViewPagerAdapter(private val fragments: ArrayList<Fragment>, fragmentManag
         return fragments[position]
     }
 
+
 }

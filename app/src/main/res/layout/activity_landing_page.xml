@@ -26,7 +26,7 @@
         android:gravity="center">
 
         <ImageView
-            android:id="@+id/circle1"
+            android:id="@+id/dot1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_landingpage_viewpager"
@@ -34,7 +34,7 @@
             />
 
         <ImageView
-            android:id="@+id/circle2"
+            android:id="@+id/dot2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_landingpage_viewpager"
@@ -42,7 +42,7 @@
             />
 
         <ImageView
-            android:id="@+id/circle3"
+            android:id="@+id/dot3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_landingpage_viewpager"
