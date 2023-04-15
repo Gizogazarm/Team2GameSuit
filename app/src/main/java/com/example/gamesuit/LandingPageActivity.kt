@@ -3,8 +3,9 @@ package com.example.gamesuit
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
+import androidx.viewpager2.widget.ViewPager2
 import com.example.gamesuit.databinding.ActivityLandingPageBinding
+
 
 class LandingPageActivity : AppCompatActivity() {
 
@@ -25,6 +26,7 @@ class LandingPageActivity : AppCompatActivity() {
             val adapter = ViewPagerAdapter(fragments, supportFragmentManager, lifecycle)
             viewPager.adapter = adapter
 
+
             btnLandingpage.setOnClickListener {
                 val currentItem = viewPager.currentItem
                 if (currentItem == fragments.size - 1) {
@@ -35,30 +37,37 @@ class LandingPageActivity : AppCompatActivity() {
                     viewPager.currentItem = viewPager.currentItem + 1
                 }
             }
-            dotSelected(dot1,dot2,dot3)
 
+            viewPager.registerOnPageChangeCallback(object: ViewPager2.OnPageChangeCallback(){
+                override fun onPageSelected(position: Int) {
+                    dotSelected(position)
+                }
+            })
         }
     }
 
-    private fun dotSelected(
-        imageDot1: ImageView,
-        imageDot2: ImageView,
-        imageDot3: ImageView
-    ) {
+    private fun dotSelected(position: Int) {
 
         with(binding) {
-            when (viewPager.currentItem) {
+            when (position) {
                 0 -> {
-                    imageDot1.setBackgroundResource(R.drawable.ic_landingpage_selected)
+                    dot1.setImageResource(R.drawable.ic_landingpage_selected)
+                    dot2.setImageResource(R.drawable.ic_landingpage_viewpager)
+                    dot3.setImageResource(R.drawable.ic_landingpage_viewpager)
                 }
                 1 -> {
-                    imageDot2.setBackgroundResource(R.drawable.ic_landingpage_selected)
+                    dot1.setImageResource(R.drawable.ic_landingpage_viewpager)
+                    dot2.setImageResource(R.drawable.ic_landingpage_selected)
+                    dot3.setImageResource(R.drawable.ic_landingpage_viewpager)
                 }
                 else -> {
-                    imageDot3.setBackgroundResource(R.drawable.ic_landingpage_selected)
+                    dot1.setImageResource(R.drawable.ic_landingpage_viewpager)
+                    dot2.setImageResource(R.drawable.ic_landingpage_viewpager)
+                    dot3.setImageResource(R.drawable.ic_landingpage_selected)
                 }
             }
         }
+
 
     }
 
