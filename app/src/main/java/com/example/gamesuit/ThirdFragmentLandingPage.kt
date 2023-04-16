@@ -10,19 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.gamesuit.databinding.FragmentThirdLandingPageBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ThirdFragmentLandingPage.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class ThirdFragmentLandingPage : Fragment() {
     // TODO: Rename and change types of parameters
-    private lateinit var simpanEditText: String
+    private var simpanEditText: String? = null
     private var _binding:FragmentThirdLandingPageBinding? = null
     private val binding get() = _binding!!
 
@@ -44,9 +36,8 @@ class ThirdFragmentLandingPage : Fragment() {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 simpanEditText=p0.toString()
-                Log.i("simpanNama", simpanEditText)
-                val bundle = Bundle()
-                bundle.putString("simpanNama",simpanEditText)
+                Log.i("simpanNama", simpanEditText!!)
+                getSimpanEditText(simpanEditText!!)
             }
             override fun afterTextChanged(p0: Editable?) {}
         })
@@ -57,5 +48,15 @@ class ThirdFragmentLandingPage : Fragment() {
         super.onDestroy()
         _binding = null
     }
+
+    fun getSimpanEditText(coba:String) {
+       simpanEditText = coba
+
+    }
+
+    fun setSimpanEditText(): String? {
+        return simpanEditText
+    }
+
 
 }

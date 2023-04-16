@@ -3,6 +3,8 @@ package com.example.gamesuit
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.viewpager2.widget.ViewPager2
 import com.example.gamesuit.databinding.ActivityLandingPageBinding
 
@@ -15,6 +17,7 @@ class LandingPageActivity : AppCompatActivity() {
         SecondFragmentLandingPage(),
         ThirdFragmentLandingPage()
     )
+    private val thirdFragment = ThirdFragmentLandingPage()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +28,14 @@ class LandingPageActivity : AppCompatActivity() {
             val adapter = ViewPagerAdapter(fragments, supportFragmentManager, lifecycle)
             viewPager.adapter = adapter
 
-
             btnLandingpage.setOnClickListener {
                 val currentItem = viewPager.currentItem
                 if (currentItem == fragments.size - 1) {
                     val intent = Intent(this@LandingPageActivity, MainActivity::class.java)
+                    val hasilSimpan = thirdFragment.setSimpanEditText()
+                    intent.putExtra("simpanNama",hasilSimpan)
+                    Toast.makeText(this@LandingPageActivity, "Selamat Datang $hasilSimpan", Toast.LENGTH_LONG).show()
+                    Log.i("nilaihasilsimpan", "$hasilSimpan")
                     startActivity(intent)
                     finish()
                 } else {
