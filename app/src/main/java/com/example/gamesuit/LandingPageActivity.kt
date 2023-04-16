@@ -22,7 +22,6 @@ class LandingPageActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         with(binding) {
-
             val adapter = ViewPagerAdapter(fragments, supportFragmentManager, lifecycle)
             viewPager.adapter = adapter
 
