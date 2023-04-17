@@ -32,7 +32,7 @@ class LandingPageActivity : AppCompatActivity() {
             btnLandingpage.setOnClickListener {
                 val currentItem = viewPager.currentItem
                 if (currentItem == fragments.size - 1) {
-                    val intent = Intent(this@LandingPageActivity, MainActivity::class.java)
+                    val intent = Intent(this@LandingPageActivity, HomeActivity::class.java)
                     hasilSimpan = (fragments[2] as ThirdFragmentLandingPage).getSimpanEditText()
                     intent.putExtra("simpanNama",hasilSimpan)
                     Toast.makeText(this@LandingPageActivity, "Selamat Datang $hasilSimpan", Toast.LENGTH_LONG).show()
