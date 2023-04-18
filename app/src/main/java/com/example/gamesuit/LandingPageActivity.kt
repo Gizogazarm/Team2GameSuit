@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.viewpager2.widget.ViewPager2
 import com.example.gamesuit.databinding.ActivityLandingPageBinding
 
@@ -35,7 +34,6 @@ class LandingPageActivity : AppCompatActivity() {
                     val intent = Intent(this@LandingPageActivity, HomeActivity::class.java)
                     hasilSimpan = (fragments[2] as ThirdFragmentLandingPage).getSimpanEditText()
                     intent.putExtra("simpanNama",hasilSimpan)
-                    Toast.makeText(this@LandingPageActivity, "Selamat Datang $hasilSimpan", Toast.LENGTH_LONG).show()
                     Log.i("nilaihasilsimpan", "$hasilSimpan")
                     startActivity(intent)
                     finish()
