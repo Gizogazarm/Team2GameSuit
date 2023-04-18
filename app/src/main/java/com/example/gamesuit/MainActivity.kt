@@ -1,13 +1,10 @@
 package com.example.gamesuit
 
 
-import android.graphics.Color
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.TypedValue
-import android.view.Gravity
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.gamesuit.databinding.ActivityMainBinding
@@ -21,12 +18,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var pilihanPlayer: String
     private lateinit var hasilSuit: String
-    private lateinit var originalText: String
     private var simpanNama: String? = ""
     private val pilihanSuit = arrayOf("batu", "kertas", "gunting")
     private val suitHasil = arrayOf("Pemain Menang", "Computer Menang", "Draw")
-
-
     private val player = Player()
     private val computer = Computer()
 
@@ -38,10 +32,17 @@ class MainActivity : AppCompatActivity() {
 
 
         with(binding) {
+            val gameMode = intent.getBooleanExtra("gameMode", false)
+            if (gameMode == false) {
+                tagpemain2.text = "Computer"
+            } else {
+                tagpemain2.text = "Pemain"
+            }
 
             simpanNama = intent.getStringExtra("simpanNama")
             Glide.with(this@MainActivity).load("https://i.ibb.co/HC5ZPgD/splash-screen1.png").into(imageGlideMain)
             tagpemain.text = simpanNama
+
 
 
             batuPlayer.setOnClickListener {
