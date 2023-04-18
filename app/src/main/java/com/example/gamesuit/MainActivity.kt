@@ -22,14 +22,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var pilihanPlayer: String
     private lateinit var hasilSuit: String
     private lateinit var originalText: String
-    private lateinit var simpanNama: String
-    private var originalColor: Int = 0
+    private var simpanNama: String? = ""
     private val pilihanSuit = arrayOf("batu", "kertas", "gunting")
     private val suitHasil = arrayOf("Pemain Menang", "Computer Menang", "Draw")
 
 
-    val player = Player()
-    val computer = Computer()
+    private val player = Player()
+    private val computer = Computer()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,10 +39,10 @@ class MainActivity : AppCompatActivity() {
 
         with(binding) {
 
+            simpanNama = intent.getStringExtra("simpanNama")
             Glide.with(this@MainActivity).load("https://i.ibb.co/HC5ZPgD/splash-screen1.png").into(imageGlideMain)
+            tagpemain.text = simpanNama
 
-            originalText = textCenter.text.toString()
-            originalColor = textCenter.currentTextColor
 
             batuPlayer.setOnClickListener {
                 batuPlayer.setBackgroundResource(R.drawable.bg_click)
@@ -53,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                 pilihanComputer(batuCom, guntingCom, kertasCom)
                 duelSuit()
                 hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
-                efekHasilSuit(textCenter, hasilSuit, suitHasil)
+
             }
 
             kertasPlayer.setOnClickListener {
@@ -64,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                 pilihanComputer(batuCom, guntingCom, kertasCom)
                 duelSuit()
                 hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
-                efekHasilSuit(textCenter, hasilSuit, suitHasil)
+
             }
 
             guntingPlayer.setOnClickListener {
@@ -75,16 +74,12 @@ class MainActivity : AppCompatActivity() {
                 pilihanComputer(batuCom, guntingCom, kertasCom)
                 duelSuit()
                 hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
-                efekHasilSuit(textCenter, hasilSuit, suitHasil)
+
             }
 
             btnRefresh.setOnClickListener {
                 setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, true)
                 setClearImageView(batuCom, guntingCom, kertasCom)
-                textCenter.text = originalText
-                textCenter.setTextColor(originalColor)
-                textCenter.setTextSize(TypedValue.COMPLEX_UNIT_SP,64f)
-                textCenter.setBackgroundResource(R.drawable.bg_awal_click)
                 Toast.makeText(this@MainActivity,"Main lagi Kuy",Toast.LENGTH_SHORT).show()
             }
 
@@ -111,39 +106,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun efekHasilSuit(textView: TextView, hasilSuit: String, arrayhasilSuit: Array<String>) {
 
-        when (hasilSuit) {
-            arrayhasilSuit[0] ->
-                textView.apply {
-                    setBackgroundResource(R.drawable.bg_text_center)
-                    text = hasilSuit
-                    setTextColor(Color.WHITE)
-                    setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
-                    Gravity.CENTER
-                }
-
-
-            arrayhasilSuit[1] ->
-                textView.apply {
-                    setBackgroundResource(R.drawable.bg_text_center)
-                    text = hasilSuit
-                    setTextColor(Color.WHITE)
-                    setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
-                    Gravity.CENTER
-                }
-
-
-            arrayhasilSuit[2] ->
-                textView.apply {
-                    setBackgroundResource(R.drawable.bg_text_center_draw)
-                    text = hasilSuit
-                    setTextColor(Color.WHITE)
-                    setTextSize(TypedValue.COMPLEX_UNIT_SP, 24f)
-                    Gravity.CENTER
-                }
-        }
-    }
 
     private fun hasilSuit(status1: Boolean, status2: Boolean, arrayhasilSuit: Array<String>): String {
 

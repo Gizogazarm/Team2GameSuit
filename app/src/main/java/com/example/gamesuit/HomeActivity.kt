@@ -29,6 +29,7 @@ class HomeActivity : AppCompatActivity() {
             icPemainvspemain.setOnClickListener {
                 val intent = Intent(this@HomeActivity,MainActivity::class.java)
                 intent.putExtra("gameMode",true)
+                intent.putExtra("simpanNama",namaPemain)
                 startActivity(intent)
                 finish()
             }
@@ -36,6 +37,7 @@ class HomeActivity : AppCompatActivity() {
             icPemainvscomputer.setOnClickListener {
                 val intent = Intent(this@HomeActivity,MainActivity::class.java)
                 intent.putExtra("gameMode",false)
+                intent.putExtra("simpanNama",namaPemain)
                 startActivity(intent)
                 finish()
             }

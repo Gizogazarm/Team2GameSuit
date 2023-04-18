@@ -16,8 +16,7 @@
             android:id="@+id/imageGlideMain"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_gravity="center"
-            />
+            android:layout_gravity="center" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -25,20 +24,22 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@id/linear"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="start"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
 
                 <TextView
+                    android:id="@+id/tagpemain"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/title_player"
+                    android:layout_marginStart="20dp"
                     android:textStyle="bold" />
 
                 <ImageView
@@ -64,29 +65,9 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="4"
-                android:gravity="center">
-
-                <TextView
-                    android:id="@+id/textCenter"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/alfa_slab_one"
-                    android:gravity="center"
-                    android:rotation="-20"
-                    android:text="@string/title_vs"
-                    android:textColor="#E50D0D"
-                    android:textSize="64sp" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linear2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="end"
@@ -141,10 +122,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="200dp"
             android:fontFamily="@font/alfa_slab_one"
-            android:text="@string/title_author"
-            android:textSize="24sp"
             android:rotationX="-20"
-            />
+            android:text="@string/title_author"
+            android:textSize="24sp" />
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
