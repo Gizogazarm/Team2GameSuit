@@ -9,6 +9,7 @@ import android.view.Gravity
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.gamesuit.databinding.ActivityMainBinding
 
 
@@ -21,9 +22,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var pilihanPlayer: String
     private lateinit var hasilSuit: String
     private lateinit var originalText: String
+    private lateinit var simpanNama: String
     private var originalColor: Int = 0
     private val pilihanSuit = arrayOf("batu", "kertas", "gunting")
     private val suitHasil = arrayOf("Pemain Menang", "Computer Menang", "Draw")
+
 
     val player = Player()
     val computer = Computer()
@@ -36,6 +39,8 @@ class MainActivity : AppCompatActivity() {
 
 
         with(binding) {
+
+            Glide.with(this@MainActivity).load("https://i.ibb.co/HC5ZPgD/splash-screen1.png").into(imageGlideMain)
 
             originalText = textCenter.text.toString()
             originalColor = textCenter.currentTextColor
