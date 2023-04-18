@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private val suitHasil = arrayOf("Pemain Menang", "Computer Menang", "Draw")
     private val player = Player()
     private val computer = Computer()
+    private val player2 = Player()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,51 +33,51 @@ class MainActivity : AppCompatActivity() {
 
 
         with(binding) {
-            val gameMode = intent.getBooleanExtra("gameMode", false)
-            if (gameMode == false) {
-                tagpemain2.text = "Computer"
-            } else {
-                tagpemain2.text = "Pemain"
-            }
 
             simpanNama = intent.getStringExtra("simpanNama")
             Glide.with(this@MainActivity).load("https://i.ibb.co/HC5ZPgD/splash-screen1.png").into(imageGlideMain)
             tagpemain.text = simpanNama
 
+            val gameMode = intent.getBooleanExtra("gameMode", false)
+            if (gameMode == false) {
+                tagpemain2.text = "Computer"
+                batuPlayer.setOnClickListener {
+                    batuPlayer.setBackgroundResource(R.drawable.bg_click)
+                    setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
+                    pilihanPlayer = pilihanSuit[0]
+                    player.setPilihanPlayer(pilihanPlayer)
+                    pilihanComputer(batuCom, guntingCom, kertasCom)
+                    duelSuit()
+                    hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
 
+                }
 
-            batuPlayer.setOnClickListener {
-                batuPlayer.setBackgroundResource(R.drawable.bg_click)
-                setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
-                pilihanPlayer = pilihanSuit[0]
-                player.setPilihanPlayer(pilihanPlayer)
-                pilihanComputer(batuCom, guntingCom, kertasCom)
-                duelSuit()
-                hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
+                kertasPlayer.setOnClickListener {
+                    kertasPlayer.setBackgroundResource(R.drawable.bg_click)
+                    setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
+                    pilihanPlayer = pilihanSuit[1]
+                    player.setPilihanPlayer(pilihanPlayer)
+                    pilihanComputer(batuCom, guntingCom, kertasCom)
+                    duelSuit()
+                    hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
 
+                }
+
+                guntingPlayer.setOnClickListener {
+                    guntingPlayer.setBackgroundResource(R.drawable.bg_click)
+                    setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
+                    pilihanPlayer = pilihanSuit[2]
+                    player.setPilihanPlayer(pilihanPlayer)
+                    pilihanComputer(batuCom, guntingCom, kertasCom)
+                    duelSuit()
+                    hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
+
+                }
+
+            } else {
+                tagpemain2.text = "Pemain"
             }
 
-            kertasPlayer.setOnClickListener {
-                kertasPlayer.setBackgroundResource(R.drawable.bg_click)
-                setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
-                pilihanPlayer = pilihanSuit[1]
-                player.setPilihanPlayer(pilihanPlayer)
-                pilihanComputer(batuCom, guntingCom, kertasCom)
-                duelSuit()
-                hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
-
-            }
-
-            guntingPlayer.setOnClickListener {
-                guntingPlayer.setBackgroundResource(R.drawable.bg_click)
-                setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
-                pilihanPlayer = pilihanSuit[2]
-                player.setPilihanPlayer(pilihanPlayer)
-                pilihanComputer(batuCom, guntingCom, kertasCom)
-                duelSuit()
-                hasilSuit = hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
-
-            }
 
             btnRefresh.setOnClickListener {
                 setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, true)
