@@ -1,5 +1,6 @@
 package com.example.gamesuit
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.gamesuit.databinding.ActivityHomeBinding
@@ -14,15 +15,33 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        namaPemain = intent.getStringExtra("simpanNama")
-        binding.textPemainvspemain.text = "$namaPemain vs Pemain"
-        binding.textPemainvscomputer.text = "$namaPemain vs Computer"
+        with(binding) {
+            namaPemain = intent.getStringExtra("simpanNama")
+            textPemainvspemain.text = "$namaPemain vs Pemain"
+            textPemainvscomputer.text = "$namaPemain vs Computer"
 
-        val snackbar = Snackbar.make(binding.root,"Selamat Datang $namaPemain", Snackbar.LENGTH_INDEFINITE)
-        snackbar.setAction("Tutup") {
-            snackbar.dismiss()
+            val snackbar = Snackbar.make(binding.root,"Selamat Datang $namaPemain", Snackbar.LENGTH_INDEFINITE)
+            snackbar.setAction("Tutup") {
+                snackbar.dismiss()
+            }
+            snackbar.show()
+
+            icPemainvspemain.setOnClickListener {
+                val intent = Intent(this@HomeActivity,MainActivity::class.java)
+                intent.putExtra("gameMode",true)
+                startActivity(intent)
+                finish()
+            }
+
+            icPemainvscomputer.setOnClickListener {
+                val intent = Intent(this@HomeActivity,MainActivity::class.java)
+                intent.putExtra("gameMode",false)
+                startActivity(intent)
+                finish()
+            }
+
         }
-        snackbar.show()
+
 
     }
 }
