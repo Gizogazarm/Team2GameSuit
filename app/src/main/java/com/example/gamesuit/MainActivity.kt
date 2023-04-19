@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var hasilSuit: String
     private var simpanNama: String? = ""
     private val pilihanSuit = arrayOf("batu", "kertas", "gunting")
-    private val suitHasil = arrayOf("Pemain Menang", "Computer Menang", "Draw")
     private var firstPlayer = true
     private val player = Player()
     private val computer = Computer()
@@ -37,8 +36,10 @@ class MainActivity : AppCompatActivity() {
             Glide.with(this@MainActivity).load("https://i.ibb.co/HC5ZPgD/splash-screen1.png")
                 .into(imageGlideMain)
             tagpemain.text = simpanNama
-
+            val suitHasil = arrayOf("$simpanNama Menang", "Computer Menang", "Draw")
+            val suitHasil1 = arrayOf("$simpanNama Menang", "Pemain 2 Menang", "Draw")
             val gameMode = intent.getBooleanExtra("gameMode", false)
+
             if (!gameMode) {
                 tagpemain2.text = "Computer"
                 batuPlayer.setOnClickListener {
@@ -92,7 +93,7 @@ class MainActivity : AppCompatActivity() {
                             player2.setPilihanPlayer(pilihanSuit[0])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil1
                             )
                             batuPlayer.setBackgroundResource(R.drawable.bg_click)
                             batuCom.setBackgroundResource(R.drawable.bg_click)
@@ -105,7 +106,7 @@ class MainActivity : AppCompatActivity() {
                             player2.setPilihanPlayer(pilihanSuit[1])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil1
                             )
                             batuPlayer.setBackgroundResource(R.drawable.bg_click)
                             kertasCom.setBackgroundResource(R.drawable.bg_click)
@@ -118,7 +119,7 @@ class MainActivity : AppCompatActivity() {
                             player2.setPilihanPlayer(pilihanSuit[2])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil1
                             )
                             batuPlayer.setBackgroundResource(R.drawable.bg_click)
                             guntingCom.setBackgroundResource(R.drawable.bg_click)
@@ -141,7 +142,7 @@ class MainActivity : AppCompatActivity() {
                             player2.setPilihanPlayer(pilihanSuit[0])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil1
                             )
                             kertasPlayer.setBackgroundResource(R.drawable.bg_click)
                             batuCom.setBackgroundResource(R.drawable.bg_click)
@@ -154,7 +155,7 @@ class MainActivity : AppCompatActivity() {
                             player2.setPilihanPlayer(pilihanSuit[1])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil1
                             )
                             kertasPlayer.setBackgroundResource(R.drawable.bg_click)
                             kertasCom.setBackgroundResource(R.drawable.bg_click)
@@ -167,7 +168,7 @@ class MainActivity : AppCompatActivity() {
                             player2.setPilihanPlayer(pilihanSuit[2])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil1
                             )
                             kertasPlayer.setBackgroundResource(R.drawable.bg_click)
                             guntingCom.setBackgroundResource(R.drawable.bg_click)
@@ -191,7 +192,7 @@ class MainActivity : AppCompatActivity() {
                             player2.setPilihanPlayer(pilihanSuit[0])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil1
                             )
                             guntingPlayer.setBackgroundResource(R.drawable.bg_click)
                             batuCom.setBackgroundResource(R.drawable.bg_click)
@@ -204,7 +205,7 @@ class MainActivity : AppCompatActivity() {
                             player2.setPilihanPlayer(pilihanSuit[1])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil1
                             )
                             guntingPlayer.setBackgroundResource(R.drawable.bg_click)
                             kertasCom.setBackgroundResource(R.drawable.bg_click)
@@ -217,7 +218,7 @@ class MainActivity : AppCompatActivity() {
                             player2.setPilihanPlayer(pilihanSuit[2])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil1
                             )
                             guntingPlayer.setBackgroundResource(R.drawable.bg_click)
                             guntingCom.setBackgroundResource(R.drawable.bg_click)
