@@ -32,6 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:gravity="center"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:orientation="horizontal">
@@ -40,7 +41,7 @@
                 android:id="@id/linear"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_gravity="start"
                 android:orientation="vertical">
 
                 <TextView
@@ -73,12 +74,30 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:text="@string/title_vs"
+                    android:fontFamily="@font/alfa_slab_one"
+                    android:textSize="64sp"
+                    android:gravity="center"
+                    android:textColor="#FF0000"
+                    android:rotation="-20"
+                    />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/linear2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="end"
+                android:layout_gravity="end"
                 android:orientation="vertical">
 
                 <TextView
