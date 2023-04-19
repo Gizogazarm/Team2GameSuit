@@ -6,10 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
-import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.bumptech.glide.Glide
 import com.example.gamesuit.databinding.ActivityMainBinding
-
+import com.example.gamesuit.databinding.CustomLayoutBinding
 
 
 class MainActivity : AppCompatActivity() {
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                     duelSuit(false)
                     hasilSuit =
                         hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
-                    Log.d("pemenang", hasilSuit)
+                    alertDialog(hasilSuit,batuPlayer, kertasPlayer, guntingPlayer,batuCom, guntingCom, kertasCom)
 
                 }
 
@@ -63,7 +63,8 @@ class MainActivity : AppCompatActivity() {
                     duelSuit(false)
                     hasilSuit =
                         hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
-                    Log.d("pemenang", hasilSuit)
+                    alertDialog(hasilSuit,batuPlayer, kertasPlayer, guntingPlayer,batuCom, guntingCom, kertasCom)
+
                 }
 
                 guntingPlayer.setOnClickListener {
@@ -74,7 +75,7 @@ class MainActivity : AppCompatActivity() {
                     duelSuit(false)
                     hasilSuit =
                         hasilSuit(player.getStatusMenang(), computer.getStatusMenang(), suitHasil)
-                    Log.d("pemenang", hasilSuit)
+                    alertDialog(hasilSuit,batuPlayer, kertasPlayer, guntingPlayer,batuCom, guntingCom, kertasCom)
 
                 }
 
@@ -98,7 +99,7 @@ class MainActivity : AppCompatActivity() {
                             )
                             batuPlayer.setBackgroundResource(R.drawable.bg_click)
                             batuCom.setBackgroundResource(R.drawable.bg_click)
-                            Log.d("pemenang", hasilSuit)
+                            alertDialog(hasilSuit,batuPlayer, kertasPlayer, guntingPlayer,batuCom, guntingCom, kertasCom)
                         }
 
                         kertasCom.setOnClickListener {
@@ -111,7 +112,8 @@ class MainActivity : AppCompatActivity() {
                             )
                             batuPlayer.setBackgroundResource(R.drawable.bg_click)
                             kertasCom.setBackgroundResource(R.drawable.bg_click)
-                            Log.d("pemenang", hasilSuit)
+                            alertDialog(hasilSuit,batuPlayer, kertasPlayer, guntingPlayer,batuCom, guntingCom, kertasCom)
+
                         }
 
                         guntingCom.setOnClickListener {
@@ -124,7 +126,8 @@ class MainActivity : AppCompatActivity() {
                             )
                             batuPlayer.setBackgroundResource(R.drawable.bg_click)
                             guntingCom.setBackgroundResource(R.drawable.bg_click)
-                            Log.d("pemenang", hasilSuit)
+                            alertDialog(hasilSuit,batuPlayer, kertasPlayer, guntingPlayer,batuCom, guntingCom, kertasCom)
+
                         }
 
                     }
@@ -147,7 +150,7 @@ class MainActivity : AppCompatActivity() {
                             )
                             kertasPlayer.setBackgroundResource(R.drawable.bg_click)
                             batuCom.setBackgroundResource(R.drawable.bg_click)
-                            Log.d("pemenang", hasilSuit)
+                            alertDialog(hasilSuit,batuPlayer, kertasPlayer, guntingPlayer,batuCom, guntingCom, kertasCom)
                         }
 
                         kertasCom.setOnClickListener {
@@ -160,7 +163,7 @@ class MainActivity : AppCompatActivity() {
                             )
                             kertasPlayer.setBackgroundResource(R.drawable.bg_click)
                             kertasCom.setBackgroundResource(R.drawable.bg_click)
-                            Log.d("pemenang", hasilSuit)
+                            alertDialog(hasilSuit,batuPlayer, kertasPlayer, guntingPlayer,batuCom, guntingCom, kertasCom)
                         }
 
                         guntingCom.setOnClickListener {
@@ -173,7 +176,7 @@ class MainActivity : AppCompatActivity() {
                             )
                             kertasPlayer.setBackgroundResource(R.drawable.bg_click)
                             guntingCom.setBackgroundResource(R.drawable.bg_click)
-                            Log.d("pemenang", hasilSuit)
+                            alertDialog(hasilSuit,batuPlayer, kertasPlayer, guntingPlayer,batuCom, guntingCom, kertasCom)
                         }
 
                     }
@@ -197,7 +200,7 @@ class MainActivity : AppCompatActivity() {
                             )
                             guntingPlayer.setBackgroundResource(R.drawable.bg_click)
                             batuCom.setBackgroundResource(R.drawable.bg_click)
-                            Log.d("pemenang", hasilSuit)
+                            alertDialog(hasilSuit,batuPlayer, kertasPlayer, guntingPlayer,batuCom, guntingCom, kertasCom)
                         }
 
                         kertasCom.setOnClickListener {
@@ -210,7 +213,7 @@ class MainActivity : AppCompatActivity() {
                             )
                             guntingPlayer.setBackgroundResource(R.drawable.bg_click)
                             kertasCom.setBackgroundResource(R.drawable.bg_click)
-                            Log.d("pemenang", hasilSuit)
+                            alertDialog(hasilSuit,batuPlayer, kertasPlayer, guntingPlayer,batuCom, guntingCom, kertasCom)
                         }
 
                         guntingCom.setOnClickListener {
@@ -223,7 +226,7 @@ class MainActivity : AppCompatActivity() {
                             )
                             guntingPlayer.setBackgroundResource(R.drawable.bg_click)
                             guntingCom.setBackgroundResource(R.drawable.bg_click)
-                            Log.d("pemenang", hasilSuit)
+                            alertDialog(hasilSuit,batuPlayer, kertasPlayer, guntingPlayer,batuCom, guntingCom, kertasCom)
                         }
 
                     }
@@ -309,5 +312,32 @@ class MainActivity : AppCompatActivity() {
             imageView3.setBackgroundResource(R.drawable.bg_awal_click)
         }
 
+    }
+
+    private fun alertDialog(statusMenang: String, btn1: ImageView, btn2: ImageView, btn3: ImageView, btn4: ImageView, btn5: ImageView, btn6: ImageView) {
+        val builder = AlertDialog.Builder(this)
+        val binding: CustomLayoutBinding = CustomLayoutBinding.inflate(layoutInflater)
+        builder.setView(binding.root)
+
+        val dialog = builder.create()
+
+        with(binding) {
+            textCenter.text = statusMenang
+            btnMainLagi.setOnClickListener {
+                setEnabledImageView(btn1,btn2,btn3,true)
+                setClearImageView(btn4, btn5, btn6)
+                firstPlayer = true
+                dialog.dismiss()
+            }
+
+            btnKembaliMainLagi.setOnClickListener {
+                val intent = Intent(this@MainActivity,HomeActivity::class.java)
+                intent.putExtra("simpanNama",simpanNama)
+                startActivity(intent)
+                finish()
+            }
+        }
+
+        dialog.show()
     }
 }

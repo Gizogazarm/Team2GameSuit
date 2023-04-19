@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/alfa_slab_one"
         android:textColor="@color/black"
-        android:textSize="50sp"
+        android:textSize="25sp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,6 +51,7 @@
         app:layout_constraintVertical_bias="0.262" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_kembaliMainLagi"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:text="Kembali ke Menu"
