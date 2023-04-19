@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.example.gamesuit.databinding.ActivityMainBinding
 
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -43,8 +44,7 @@ class MainActivity : AppCompatActivity() {
                 batuPlayer.setOnClickListener {
                     batuPlayer.setBackgroundResource(R.drawable.bg_click)
                     setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
-                    pilihanPlayer = pilihanSuit[0]
-                    player.setPilihanPlayer(pilihanPlayer)
+                    setPilihanPlayer(0)
                     pilihanComputer(batuCom, guntingCom, kertasCom)
                     duelSuit(false)
                     hasilSuit =
@@ -56,8 +56,7 @@ class MainActivity : AppCompatActivity() {
                 kertasPlayer.setOnClickListener {
                     kertasPlayer.setBackgroundResource(R.drawable.bg_click)
                     setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
-                    pilihanPlayer = pilihanSuit[1]
-                    player.setPilihanPlayer(pilihanPlayer)
+                    setPilihanPlayer(1)
                     pilihanComputer(batuCom, guntingCom, kertasCom)
                     duelSuit(false)
                     hasilSuit =
@@ -68,8 +67,7 @@ class MainActivity : AppCompatActivity() {
                 guntingPlayer.setOnClickListener {
                     guntingPlayer.setBackgroundResource(R.drawable.bg_click)
                     setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
-                    pilihanPlayer = pilihanSuit[2]
-                    player.setPilihanPlayer(pilihanPlayer)
+                    setPilihanPlayer(2)
                     pilihanComputer(batuCom, guntingCom, kertasCom)
                     duelSuit(false)
                     hasilSuit =
@@ -83,8 +81,6 @@ class MainActivity : AppCompatActivity() {
                 setEnabledImageView(batuCom, kertasCom, guntingCom, false)
                 batuPlayer.setOnClickListener {
                     setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
-                    pilihanPlayer = pilihanSuit[0]
-                    player.setPilihanPlayer(pilihanPlayer)
                     firstPlayer = false
 
                     if (!firstPlayer) {
@@ -92,12 +88,11 @@ class MainActivity : AppCompatActivity() {
 
                         batuCom.setOnClickListener {
                             setEnabledImageView(batuCom, kertasCom, guntingCom, false)
+                            setPilihanPlayer(0)
                             player2.setPilihanPlayer(pilihanSuit[0])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(),
-                                player2.getStatusMenang(),
-                                suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
                             )
                             batuPlayer.setBackgroundResource(R.drawable.bg_click)
                             batuCom.setBackgroundResource(R.drawable.bg_click)
@@ -106,12 +101,11 @@ class MainActivity : AppCompatActivity() {
 
                         kertasCom.setOnClickListener {
                             setEnabledImageView(batuCom, kertasCom, guntingCom, false)
+                            setPilihanPlayer(0)
                             player2.setPilihanPlayer(pilihanSuit[1])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(),
-                                player2.getStatusMenang(),
-                                suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
                             )
                             batuPlayer.setBackgroundResource(R.drawable.bg_click)
                             kertasCom.setBackgroundResource(R.drawable.bg_click)
@@ -120,12 +114,11 @@ class MainActivity : AppCompatActivity() {
 
                         guntingCom.setOnClickListener {
                             setEnabledImageView(batuCom, kertasCom, guntingCom, false)
+                            setPilihanPlayer(0)
                             player2.setPilihanPlayer(pilihanSuit[2])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(),
-                                player2.getStatusMenang(),
-                                suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
                             )
                             batuPlayer.setBackgroundResource(R.drawable.bg_click)
                             guntingCom.setBackgroundResource(R.drawable.bg_click)
@@ -137,8 +130,6 @@ class MainActivity : AppCompatActivity() {
 
                 kertasPlayer.setOnClickListener {
                     setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
-                    pilihanPlayer = pilihanSuit[1]
-                    player.setPilihanPlayer(pilihanPlayer)
                     firstPlayer = false
 
                     if (!firstPlayer) {
@@ -146,12 +137,11 @@ class MainActivity : AppCompatActivity() {
 
                         batuCom.setOnClickListener {
                             setEnabledImageView(batuCom, kertasCom, guntingCom, false)
+                            setPilihanPlayer(1)
                             player2.setPilihanPlayer(pilihanSuit[0])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(),
-                                player2.getStatusMenang(),
-                                suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
                             )
                             kertasPlayer.setBackgroundResource(R.drawable.bg_click)
                             batuCom.setBackgroundResource(R.drawable.bg_click)
@@ -160,12 +150,11 @@ class MainActivity : AppCompatActivity() {
 
                         kertasCom.setOnClickListener {
                             setEnabledImageView(batuCom, kertasCom, guntingCom, false)
+                            setPilihanPlayer(1)
                             player2.setPilihanPlayer(pilihanSuit[1])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(),
-                                player2.getStatusMenang(),
-                                suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
                             )
                             kertasPlayer.setBackgroundResource(R.drawable.bg_click)
                             kertasCom.setBackgroundResource(R.drawable.bg_click)
@@ -174,12 +163,11 @@ class MainActivity : AppCompatActivity() {
 
                         guntingCom.setOnClickListener {
                             setEnabledImageView(batuCom, kertasCom, guntingCom, false)
+                            setPilihanPlayer(1)
                             player2.setPilihanPlayer(pilihanSuit[2])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(),
-                                player2.getStatusMenang(),
-                                suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
                             )
                             kertasPlayer.setBackgroundResource(R.drawable.bg_click)
                             guntingCom.setBackgroundResource(R.drawable.bg_click)
@@ -192,8 +180,6 @@ class MainActivity : AppCompatActivity() {
 
                 guntingPlayer.setOnClickListener {
                     setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
-                    pilihanPlayer = pilihanSuit[2]
-                    player.setPilihanPlayer(pilihanPlayer)
                     firstPlayer = false
 
                     if (!firstPlayer) {
@@ -201,12 +187,11 @@ class MainActivity : AppCompatActivity() {
 
                         batuCom.setOnClickListener {
                             setEnabledImageView(batuCom, kertasCom, guntingCom, false)
+                            setPilihanPlayer(2)
                             player2.setPilihanPlayer(pilihanSuit[0])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(),
-                                player2.getStatusMenang(),
-                                suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
                             )
                             guntingPlayer.setBackgroundResource(R.drawable.bg_click)
                             batuCom.setBackgroundResource(R.drawable.bg_click)
@@ -215,12 +200,11 @@ class MainActivity : AppCompatActivity() {
 
                         kertasCom.setOnClickListener {
                             setEnabledImageView(batuCom, kertasCom, guntingCom, false)
+                            setPilihanPlayer(2)
                             player2.setPilihanPlayer(pilihanSuit[1])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(),
-                                player2.getStatusMenang(),
-                                suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
                             )
                             guntingPlayer.setBackgroundResource(R.drawable.bg_click)
                             kertasCom.setBackgroundResource(R.drawable.bg_click)
@@ -229,12 +213,11 @@ class MainActivity : AppCompatActivity() {
 
                         guntingCom.setOnClickListener {
                             setEnabledImageView(batuCom, kertasCom, guntingCom, false)
+                            setPilihanPlayer(2)
                             player2.setPilihanPlayer(pilihanSuit[2])
                             duelSuit(true)
                             hasilSuit = hasilSuit(
-                                player.getStatusMenang(),
-                                player2.getStatusMenang(),
-                                suitHasil
+                                player.getStatusMenang(), player2.getStatusMenang(), suitHasil
                             )
                             guntingPlayer.setBackgroundResource(R.drawable.bg_click)
                             guntingCom.setBackgroundResource(R.drawable.bg_click)
@@ -260,20 +243,23 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun setPilihanPlayer(position: Int) {
+        pilihanPlayer = pilihanSuit[position]
+        player.setPilihanPlayer(pilihanPlayer)
+    }
+
     private fun duelSuit(gameMode1: Boolean) {
         if (!gameMode1) {
             player.suit(player.getPilihanPlayer(), computer.getPilihanPlayer())
             computer.suit(computer.getPilihanPlayer(), player.getPilihanPlayer())
         } else {
             player.suit(player.getPilihanPlayer(), player2.getPilihanPlayer())
-            player2.suit(player.getPilihanPlayer(), player2.getPilihanPlayer())
+            player2.suit(player2.getPilihanPlayer(), player.getPilihanPlayer())
         }
     }
 
     private fun pilihanComputer(
-        imageView1: ImageView,
-        imageView2: ImageView,
-        imageView3: ImageView
+        imageView1: ImageView, imageView2: ImageView, imageView3: ImageView
     ) {
         computer.pilihanCom(pilihanSuit)
         computer.setPilihanPlayer(computer.getPilihanCom())
@@ -281,9 +267,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setClearImageView(
-        imageView1: ImageView,
-        imageView2: ImageView,
-        imageView3: ImageView
+        imageView1: ImageView, imageView2: ImageView, imageView3: ImageView
     ) {
         imageView1.setBackgroundResource(R.drawable.bg_awal_click)
         imageView2.setBackgroundResource(R.drawable.bg_awal_click)
@@ -292,9 +276,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun hasilSuit(
-        status1: Boolean,
-        status2: Boolean,
-        arrayhasilSuit: Array<String>
+        status1: Boolean, status2: Boolean, arrayhasilSuit: Array<String>
     ): String {
 
         val nilaiString: String = if (status1 && !status2) {
@@ -308,10 +290,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setEnabledImageView(
-        imageView1: ImageView,
-        imageView2: ImageView,
-        imageView3: ImageView,
-        setNilai: Boolean
+        imageView1: ImageView, imageView2: ImageView, imageView3: ImageView, setNilai: Boolean
     ) {
         imageView1.isEnabled = setNilai
         imageView2.isEnabled = setNilai
