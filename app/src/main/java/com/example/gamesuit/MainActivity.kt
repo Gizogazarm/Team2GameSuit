@@ -1,6 +1,7 @@
 package com.example.gamesuit
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                 .into(imageGlideMain)
             tagpemain.text = simpanNama
             val suitHasil = arrayOf("$simpanNama Menang", "Computer Menang", "Draw")
-            val suitHasil1 = arrayOf("$simpanNama Menang", "Pemain 2 Menang", "Draw")
+            val suitHasil1 = arrayOf("$simpanNama Menang", "Pemain Menang", "Draw")
             val gameMode = intent.getBooleanExtra("gameMode", false)
 
             if (!gameMode) {
@@ -231,6 +232,12 @@ class MainActivity : AppCompatActivity() {
 
             }
 
+            btnClose.setOnClickListener {
+                val intent = Intent(this@MainActivity,HomeActivity::class.java)
+                intent.putExtra("simpanNama",simpanNama)
+                startActivity(intent)
+                finish()
+            }
 
             btnRefresh.setOnClickListener {
                 setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, true)
