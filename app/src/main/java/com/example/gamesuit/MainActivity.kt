@@ -243,7 +243,6 @@ class MainActivity : AppCompatActivity() {
                 setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, true)
                 setClearImageView(batuCom, guntingCom, kertasCom)
                 firstPlayer = true
-                Toast.makeText(this@MainActivity, "Main lagi Kuy", Toast.LENGTH_SHORT).show()
             }
 
 
