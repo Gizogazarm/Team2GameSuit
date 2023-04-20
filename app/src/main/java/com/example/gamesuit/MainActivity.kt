@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import com.bumptech.glide.Glide
 import com.example.gamesuit.databinding.ActivityMainBinding
 import com.example.gamesuit.databinding.CustomLayoutBinding
+import com.google.android.material.snackbar.Snackbar
 
 
 class MainActivity : AppCompatActivity() {
@@ -84,6 +85,7 @@ class MainActivity : AppCompatActivity() {
                 batuPlayer.setOnClickListener {
                     setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
                     firstPlayer = false
+                    snackbarPemain(simpanNama)
 
                     if (!firstPlayer) {
                         setEnabledImageView(batuCom, kertasCom, guntingCom, true)
@@ -135,6 +137,7 @@ class MainActivity : AppCompatActivity() {
                 kertasPlayer.setOnClickListener {
                     setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
                     firstPlayer = false
+                    snackbarPemain(simpanNama)
 
                     if (!firstPlayer) {
                         setEnabledImageView(batuCom, kertasCom, guntingCom, true)
@@ -185,6 +188,7 @@ class MainActivity : AppCompatActivity() {
                 guntingPlayer.setOnClickListener {
                     setEnabledImageView(batuPlayer, kertasPlayer, guntingPlayer, false)
                     firstPlayer = false
+                    snackbarPemain(simpanNama)
 
                     if (!firstPlayer) {
                         setEnabledImageView(batuCom, kertasCom, guntingCom, true)
@@ -338,5 +342,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         dialog.show()
+    }
+
+    private fun snackbarPemain(namaPemain:String?) {
+
+        val snackbar = Snackbar.make(binding.root,"$namaPemain Sudah Memilih", Snackbar.LENGTH_INDEFINITE)
+        snackbar.setAction("Tutup") {
+            snackbar.dismiss()
+        }
+        snackbar.show()
     }
 }
