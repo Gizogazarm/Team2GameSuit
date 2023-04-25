@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.viewpager2.widget.ViewPager2
 import com.example.gamesuit.databinding.ActivityLandingPageBinding
 
@@ -32,11 +33,18 @@ class LandingPageActivity : AppCompatActivity() {
                 val currentItem = viewPager.currentItem
                 if (currentItem == fragments.size - 1) {
                     val intent = Intent(this@LandingPageActivity, HomeActivity::class.java)
-                    hasilSimpan = (fragments[2] as ThirdFragmentLandingPage).getSimpanEditText()
-                    intent.putExtra("simpanNama",hasilSimpan)
-                    Log.i("nilaihasilsimpan", "$hasilSimpan")
-                    startActivity(intent)
-                    finish()
+                    val fragmentThird = (fragments[2] as ThirdFragmentLandingPage)
+                    if(fragmentThird.getSimpanEditText() == null) {
+                        Toast.makeText(this@LandingPageActivity,"Mohon untuk Isi Nama Dahulu",Toast.LENGTH_LONG).show()
+                        Log.d("nilai", "$fragmentThird.getSimpanEditText()")
+                    } else {
+                        hasilSimpan = fragmentThird.getSimpanEditText()
+                        intent.putExtra("simpanNama",hasilSimpan)
+                        Log.i("nilaihasilsimpan", "$hasilSimpan")
+                        startActivity(intent)
+                        finish()
+                    }
+
                 } else {
                     viewPager.currentItem = viewPager.currentItem + 1
                 }

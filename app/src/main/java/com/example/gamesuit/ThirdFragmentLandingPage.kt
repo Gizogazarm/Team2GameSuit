@@ -14,7 +14,7 @@ class ThirdFragmentLandingPage : Fragment() {
     private var _binding: FragmentThirdLandingPageBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var simpanEditText: String
+    private var simpanEditText: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,11 +54,6 @@ class ThirdFragmentLandingPage : Fragment() {
     }
 
     fun getSimpanEditText(): String? {
-        return if (simpanEditText.isBlank()) {
-            return null
-        } else {
            return simpanEditText
-        }
-
     }
 }
