@@ -4,8 +4,11 @@ package com.example.gamesuit
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.example.gamesuit.databinding.ActivityMainBinding
 import com.example.gamesuit.databinding.CustomLayoutBinding
@@ -24,12 +27,10 @@ class MainActivity : AppCompatActivity() {
     private val computer = Computer()
     private val player2 = Player()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
 
         with(binding) {
 
