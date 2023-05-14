@@ -9,4 +9,12 @@
     <string name="title_vs">VS</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="skip_intro">SKIP INTRO</string>
+    <string name="next">NEXT</string>
+    <string name="description_text">Description Text</string>
+    <string name="title_text">Title Text</string>
+    <string name="dialog_start_game" />
+    <string name="start" />
+    <string name="cancel" />
+    <string name="signin" />
 </resources>
