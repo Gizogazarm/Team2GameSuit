@@ -17,4 +17,9 @@
     <string name="start" />
     <string name="cancel" />
     <string name="signin" />
+    <string name="pilih_lawanmu">PILIH LAWANMU</string>
+    <string name="next2">NEXT</string>
+    <string name="nickname">Nickname</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
 </resources>
