@@ -3,22 +3,13 @@ package com.example.gamesuit
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.Toast
+import android.widget.*
 import androidx.core.content.ContextCompat
-import androidx.core.os.persistableBundleOf
 import androidx.core.view.get
-import androidx.core.view.indices
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.gamesuit.databinding.ActivityLandingPageBinding
-import com.example.gamesuit.IntroSlide
-import com.example.gamesuit.IntroSliderAdapter
-import com.example.gamesuit.databinding.ActivityMainBinding
+
 
 @Suppress("CAST_NEVER_SUCCEDS")
 class LandingPageActivity : AppCompatActivity() {
@@ -60,9 +51,15 @@ class LandingPageActivity : AppCompatActivity() {
             }
         })
 
-        binding.ivNext.setOnClickListener {
+        binding.btnNext.setOnClickListener {
             val editText = findViewById<EditText>(R.id.editText)
-            val inputNama = editText.text.toString().trim()
+            val inputNama = editText.text.toString()
+
+            val radioGroup = findViewById<RadioGroup>(R.id.gender_options)
+            val selectedRadioButtonId = radioGroup.checkedRadioButtonId
+            val selectedRadioButton: RadioButton = findViewById(selectedRadioButtonId)
+            val selectedText = selectedRadioButton.text.toString()
+
             if (binding.introSliderViewPager.currentItem + 1 < introSliderAdapter.itemCount) {
                 binding.introSliderViewPager.currentItem += 1
             } else {
@@ -70,7 +67,8 @@ class LandingPageActivity : AppCompatActivity() {
                 if (inputNama.isEmpty()) {
                     Toast.makeText(this, "Harap isi nama terlebih dahulu", Toast.LENGTH_SHORT).show()
                 } else {
-                    intent.putExtra("inputData", inputNama)
+                    intent.putExtra("simpanNama", inputNama)
+                    intent.putExtra("selectedText", selectedText)
                     startActivity(intent)
                     finish()
                 }

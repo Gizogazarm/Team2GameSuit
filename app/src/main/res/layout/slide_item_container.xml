@@ -8,7 +8,7 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageSlideIcon"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:contentDescription="@string/app_name" />
 
@@ -27,11 +27,42 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="250dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:hint="name"
+        android:hint="@string/nickname"
+        android:padding="8dp"
+        android:autofillHints="name"
+        android:inputType="textPersonName"
+        android:drawableStart="@drawable/ic_person"
+        android:drawablePadding="16dp"
         android:layout_gravity="center"
-        android:visibility="gone"
+        android:visibility="visible"
         />
+
+    <RadioGroup
+        android:id="@+id/gender_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:checkedButton="@id/option_male"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        >
+
+        <RadioButton
+            android:id="@+id/option_male"
+            style="@style/Widget.TipTime.CompoundButton.RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male" />
+
+        <RadioButton
+            android:id="@+id/option_female"
+            style="@style/Widget.TipTime.CompoundButton.RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female" />
+
+    </RadioGroup>
 
 </LinearLayout>

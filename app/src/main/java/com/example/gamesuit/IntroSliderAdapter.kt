@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.RadioGroup
 import android.widget.TextView
-import androidx.core.os.persistableBundleOf
 import androidx.recyclerview.widget.RecyclerView
 
 class IntroSliderAdapter(private val introSlides: List<IntroSlide>) :
@@ -26,7 +26,6 @@ class IntroSliderAdapter(private val introSlides: List<IntroSlide>) :
 
     override fun onBindViewHolder(holder: IntroSlideViewHolder, position: Int) {
         holder.bind(introSlides[position])
-
     }
 
     override fun getItemCount(): Int {
@@ -37,15 +36,18 @@ class IntroSliderAdapter(private val introSlides: List<IntroSlide>) :
 
         private val imageIcon = view.findViewById<ImageView>(R.id.imageSlideIcon)
         private val textDescription = view.findViewById<TextView>(R.id.text_description)
-        private var edittext = view.findViewById<EditText>(R.id.editText)
+        private var editText = view.findViewById<EditText>(R.id.editText)
+        private var gender = view.findViewById<RadioGroup>(R.id.gender_options)
 
         fun bind(introSlide: IntroSlide) {
             imageIcon.setImageResource(introSlide.icon)
             textDescription.text = introSlide.description
             if (visiblePosition == adapterPosition) {
-                edittext.visibility = View.VISIBLE
+                editText.visibility = View.VISIBLE
+                gender.visibility = View.VISIBLE
             } else {
-                edittext.visibility = View.GONE
+                editText.visibility = View.GONE
+                gender.visibility = View.GONE
             }
         }
     }

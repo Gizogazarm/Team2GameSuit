@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/alfa_slab_one"
-        android:text="PILIH LAWANMU"
+        android:text="@string/pilih_lawanmu"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="25sp"
@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.102" />
 
     <ImageView
-        android:id="@+id/ic_pemainvspemain"
+        android:id="@+id/iv_pemainVsPemain"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/ic_landing_page1"
@@ -31,10 +31,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_home_title"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintVertical_bias="0.08"/>
 
     <TextView
-        android:id="@+id/text_pemainvspemain"
+        android:id="@+id/text_pemainVsPemain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/alfa_slab_one"
@@ -45,22 +45,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ic_pemainvspemain"
+        app:layout_constraintTop_toBottomOf="@id/iv_pemainVsPemain"
         app:layout_constraintVertical_bias="0.048" />
 
     <ImageView
-        android:id="@+id/ic_pemainvscomputer"
+        android:id="@+id/iv_pemainVsComputer"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/ic_landing_page2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_pemainvspemain"
+        app:layout_constraintTop_toBottomOf="@+id/text_pemainVsPemain"
         app:layout_constraintVertical_bias="0.08" />
 
     <TextView
-        android:id="@+id/text_pemainvscomputer"
+        android:id="@+id/text_pemainVsComputer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/alfa_slab_one"
@@ -71,10 +71,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ic_pemainvscomputer"
+        app:layout_constraintTop_toBottomOf="@id/iv_pemainVsComputer"
         app:layout_constraintVertical_bias="0.048" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
